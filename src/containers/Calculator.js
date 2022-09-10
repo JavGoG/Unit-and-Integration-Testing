@@ -10,6 +10,7 @@ function App() {
   const [newTotal, setNewTotal] = useState(true);
   const [calculatedTotal, setCalculatedTotal] = useState(0);
 
+
   const numberClick =  (number) => {
 
     let tempTotal = runningTotal;
@@ -93,9 +94,18 @@ function App() {
   }
 
   const divide = (number) => {
+    
     let calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
+    // 
+    if(calculatedNumber==='Infinity')
+    calculatedNumber= 'Indeterminate'
+    // 
     setRunningTotal(calculatedNumber);
     setCalculatedTotal(calculatedNumber);
+    
+
+
+    
   }
 
 
